@@ -107,12 +107,24 @@
   width: 120px !important;
 }
 .dropZoneBox {
-  border-radius: 10px;
-  padding: 40px;
-  border: 1px dashed rgba(0, 0, 0, 0.40);
   overflow: hidden;
   width: 100%;
   position: relative;
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px dashed rgba(0, 0, 0, 0.40);
+  
+}
+.slick-next:before,
+.slick-prev:before {
+  font-size: 40px;
+
+  opacity: 1 !important;
+  color: #fff;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  margin-top: -17px !important;
 }
 
 .mainFooterBox {
@@ -128,17 +140,7 @@
   transition: all 0.4s ease-in;
 }
 
-.slick-next:before,
-.slick-prev:before {
-  font-size: 40px;
 
-  opacity: 1 !important;
-  color: #fff;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center;
-  margin-top: -17px !important;
-}
 
 .slick-track {
   padding: 40px 0;
