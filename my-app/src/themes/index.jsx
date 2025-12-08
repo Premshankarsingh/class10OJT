@@ -154,7 +154,6 @@ const baseOptions = createTheme({
           position: "relative",
           fontSize: "14px",
           fontWeight: "300",
-          color: "#fff",
           padding: "14px 14px",
           borderRadius: "10px",
         },
@@ -409,10 +408,7 @@ const baseOptions = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          // padding: "0px 65px !important",
-          "@media (max-width: 780px)": {
-            // padding: "0px 16px !important",
-          },
+         minHeight:"0px !important",
         },
       },
     },
@@ -436,16 +432,10 @@ const baseOptions = createTheme({
             color: "#000 !important",
             marginLeft: "-15px !important",
           },
-          "& .css-1jsy6pn-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected)":
-            {
-              color: "#fff !important",
-              backgroundColor: "#7A69FE !important",
-              border: "none !important",
-              borderRadius: "10px !important",
-            },
+         
           "& .Mui-selected": {
             backgroundColor: "#7A69FE !important",
-            color: "#fff !important",
+            // color: "#fff !important",
             border: "none !important",
             borderRadius: "10px !important",
           },

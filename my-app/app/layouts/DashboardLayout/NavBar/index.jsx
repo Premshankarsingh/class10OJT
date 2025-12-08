@@ -1,14 +1,9 @@
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { TbLogout } from "react-icons/tb";
 import PropTypes from "prop-types";
-import {
-  Box,
-  Drawer,
-  List,
-  ListSubheader,
-} from "@mui/material";
+import { Box, Drawer, List, ListSubheader } from "@mui/material";
 // import {
 //   Hidden,
 // } from "@mui/material";
@@ -52,20 +47,7 @@ const SideMenuBox = styled(Box)({
     marginLeft: "45px",
   },
 });
-const LogoutButton = styled(Box)({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  background: "transparent",
-  fontWeight: "400",
-  fontSize: "13px",
-  marginTop: "20px",
-  "& button": {
-    borderRadius: "50px",
-    position: "absolute",
-    bottom: "10px",
-  },
-});
+
 const MainSiderBarBox = styled(Box)(({ theme }) => ({
   position: "relative",
   height: "calc(100% - 73px)",
@@ -73,7 +55,6 @@ const MainSiderBarBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {
     // height: "calc(100% - 470px)",
   },
- 
 }));
 
 const sections = [
@@ -135,7 +116,7 @@ const sections = [
         icon: "/images/dashboard/user.png",
         href: "/admin/my-account",
       },
-       {
+      {
         title: "Contact Us",
         icon: "/images/dashboard/user.png",
         href: "/admin/my-account",
@@ -205,16 +186,10 @@ const NavBar = ({ onMobileClose, openMobile }) => {
     }
   }, [router.pathname]);
 
-  const handleLogout = () => {
-    window.sessionStorage.removeItem("token");
-    router.push("/");
-  };
-
   const content = (
     <Box height="100%" display="flex" flexDirection="column">
       <MainSiderBarBox>
         <Box className="mainSiderBarBox">
-         
           <PerfectScrollbar options={{ suppressScrollX: true }}>
             <Box pt={2} pb={2} style={{ margin: "10px" }}>
               <SideMenuBox>
@@ -243,27 +218,26 @@ const NavBar = ({ onMobileClose, openMobile }) => {
 
   return (
     <>
-      {/* <Hidden lgUp> */}
-        <MobileDrawer
-          anchor="left"
-          onClose={onMobileClose}
-          open={openMobile}
-          variant="temporary"
-          // sx={{ display: { xs: 'none', sm: 'none', md: 'none' } }}
-          // sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg:"none" } }}
-        >
-          <Box p={2} style={{ position: "relative" }}>
-            {content}
-          </Box>
-        </MobileDrawer>
-      {/* </Hidden> */}
-      {/* <Hidden lgDown> */}
-        <DesktopDrawer anchor="left" open variant="persistent" 
-        sx={{ display: { xs: 'none', sm: 'none', md: 'block',lg:"block" } }}
-        >
+      <MobileDrawer
+        anchor="left"
+        onClose={onMobileClose}
+        open={openMobile}
+        variant="temporary"
+        sx={{ display: { md: "block", lg: "none" } }}
+      >
+        <Box p={2} style={{ position: "relative" }}>
           {content}
-        </DesktopDrawer>
-      {/* </Hidden> */}
+        </Box>
+      </MobileDrawer>
+
+      <DesktopDrawer
+        anchor="left"
+        open
+        variant="persistent"
+        sx={{ display: { xs: "none", sm: "none", md: "block", lg: "block" } }}
+      >
+        {content}
+      </DesktopDrawer>
     </>
   );
 };

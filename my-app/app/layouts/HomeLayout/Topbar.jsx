@@ -568,7 +568,6 @@ export default function TopBar() {
             <Box display="flex" alignItems="center">
               <IconButton style={{ padding: "4px" }}>
                 <IoIosNotifications
-                  // style={{ color: "#fff", fontSize: "20px" }}
                 />
               </IconButton>
               <IconButton

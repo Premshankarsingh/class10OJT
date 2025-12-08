@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { BiBell } from "react-icons/bi";
-import { styled } from "@mui/system";
+import { maxWidth, styled } from "@mui/system";
 import {
   IconButton,
   Toolbar,
@@ -10,15 +10,15 @@ import {
   Grid,
   Box,
   Avatar,
+  TextField,
   Typography,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
-import Logo from "@/src/components/Logo";
+import Logo from "../../../../src/components/Logo";
 
 const AppBarContainer = styled(AppBar)(({ theme }) => ({
   backgroundColor: "rgba(255, 255, 255, 0.05)",
- 
 }));
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -37,31 +37,6 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
 }));
 
 const MainHeader = styled(Box)(({ theme }) => ({
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-  flexWrap: "wrap",
-
-  "& .leftBox": {
-    width: "40px",
-    [theme.breakpoints.down("md")]: {
-      width: "20px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: "10px",
-    },
-    "& img": {
-      width: "40px",
-      [theme.breakpoints.down("xs")]: {
-        width: "10px",
-        paddingLeft: "0 !important",
-      },
-    },
-    "& h4": {
-     
-      fontWeight: 400,
-    },
-  },
   "& .filtersButton": {
     marginLeft: "20px",
     "& .filterIcon": {
@@ -70,59 +45,124 @@ const MainHeader = styled(Box)(({ theme }) => ({
         width: "37px",
         height: "37px",
         borderRadius: "50%",
-
         padding: "0px",
         "& svg": {
           position: "absolute",
-          color: "rgba(0, 0, 0, 0.40)",
           zIndex: 3,
         },
       },
+    },
+  },
+  "& .serchBox": {
+    "& .MuiOutlinedInput-root": {
+      border: "1px solid #E8E8E8",
+      position: "relative",
+      borderRadius: "10px",
+      background: "#FFFFFF",
+      height: "44px",
+      color: "#000 !important",
+      // minWidth: "350px",
     },
   },
 }));
 
 const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
   return (
-    
-      <AppBarContainer
+    <AppBarContainer
       elevation={3}
-      style={{ padding: "0px" }}
+      style={{}}
       className={clsx(className)}
       color="inherit"
+      sx={{
+        boxShadow: "0px 4px 4px 0px #0000001A",
+        color: "#FFFFFF",
+        borderRadius: "0px",
+        padding: "8px",
+      }}
     >
       <StyledToolbar>
-        {/* <Hidden lgUp> */}
-          <StyledIconButton onClick={onMobileNavOpen}>
-            <MenuIcon style={{ fontSize: "30px", color:"#f53756" }} />
-          </StyledIconButton>
-        {/* </Hidden> */}
-        <MainHeader>
-          <Grid container>
-            {/* <Hidden mdDown> */}
-              <Grid item lg={3} md={3} sm={4} xs={3}>
-                <Logo width="150px" />
-              </Grid>
-            {/* </Hidden> */}
-            <Grid lg={9} md={9} sm={12} xs={12} style={{display:"flex", justifyContent:"end"}}>
-              <Box className="filtersButton displayEnd">
-                <Box className="filterIcon">
-                  <IconButton style={{ cursor: "pointer", marginRight: "8px" }}>
-                    <HiOutlineDocumentArrowUp />
-                  </IconButton>
-                </Box>
-                <Box className="filterIcon">
-                  <IconButton>
-                    <BiBell />
-                  </IconButton>
+        <StyledIconButton
+          onClick={onMobileNavOpen}
+          sx={{ display: { sm: "block", md: "none" } }}
+        >
+          <MenuIcon style={{ fontSize: "30px", color: "#6FCFB9" }} />
+        </StyledIconButton>
+      </StyledToolbar>
+      <MainHeader>
+        <Box className="displaySpacebetween">
+          <Box sx={{ display: { sm: "none", md: "block" } }}>
+            <Box className="filtersButton displayEnd">
+              <Box className="displayStart filterIcon">
+                <IconButton style={{ cursor: "pointer", marginRight: "8px" }}>
+                  <img
+                    src="/images/topbar/calisLogo.png"
+                    alt="search"
+                    width="350px"
+                  />
+                </IconButton>
+                <Box>
+                  <Typography variant="h3" sx={{ color: "#6FCFB9",fontWeight:700 }}>
+                    Cali's Dairy
+                  </Typography>
                 </Box>
               </Box>
-            </Grid>
-          </Grid>
-        </MainHeader>
-      </StyledToolbar>
+            </Box>
+          </Box>
+          <Box className="displayStart serchBox">
+            <Box>
+              <TextField
+                style={{ width: "100%", maxWidth: "225px" }}
+                variant="outlined"
+                placeholder="Search by brands name or category...."
+                fullWidth
+                type="search"
+              />
+            </Box>
+            <Box>
+              <IconButton>
+                <img
+                  src="/images/topbar/filterIcon.png"
+                  alt="search"
+                  width="350px"
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box style={{ display: "flex", justifyContent: "end" }}>
+            <Box className="filtersButton serchBox displayEnd">
+              <IconButton size="40px">
+                <img
+                  src="/images/topbar/addIcon.png"
+                  alt="search"
+                  width="400px"
+                />
+              </IconButton>
+              <IconButton size="40px">
+                <img
+                  src="/images/topbar/messageIcon.png"
+                  alt="search"
+                  width="400px"
+                />
+              </IconButton>
+              <IconButton size="40px">
+                <img
+                  src="/images/topbar/notificationIcon.png"
+                  alt="search"
+                  width="400px"
+                />
+              </IconButton>
+              <IconButton size="40px">
+                <img
+                  src="/images/topbar/profileIcon.png"
+                  alt="search"
+                  width="400px"
+                />
+              </IconButton>
+            </Box>
+          </Box>
+        </Box>
+      </MainHeader>
     </AppBarContainer>
-  
   );
 };
 
