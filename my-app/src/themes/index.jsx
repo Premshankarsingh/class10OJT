@@ -22,7 +22,7 @@ const baseOptions = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          color: "rgb(255, 255, 255)",
+          // color: "rgb(255, 255, 255)",
         },
       },
     },
@@ -30,12 +30,11 @@ const baseOptions = createTheme({
       styleOverrides: {
         paper: {
           width: "400px",
-          backgroundColor: "#140e2e !important",
+          backgroundColor: "#F5F5F5",
           padding: "20px",
-          background: "rgb(34 28 61)!important",
         },
         "& .MuiButtonBase": {
-          borderRadius: "10px",
+          // borderRadius: "10px",
         },
       },
     },
@@ -77,7 +76,7 @@ const baseOptions = createTheme({
       styleOverrides: {
         root: {
           fontSize: "20px",
-          color: "rgba(0, 0, 0, 0.60)",
+          // color: "rgba(0, 0, 0, 0.60)",
           // background: "rgba(0, 0, 0, 0.08)",
           padding: "10px",
           width: "40px",
@@ -179,18 +178,18 @@ const baseOptions = createTheme({
         },
         elevation1: {
           border: "1px solid rgba(255, 255, 255, 0.04)",
-          background: "#161032",
+          // background: "#161032",
           borderRadius: "10px",
           padding: "20px",
         },
         elevation2: {
           border: "1px solid rgba(255, 255, 255, 0.04)",
-          background: "rgba(69, 46, 84, 0.25)",
+          // background: "rgba(69, 46, 84, 0.25)",
           borderRadius: "10px",
           padding: "20px",
         },
         elevation3: {
-          background: "rgba(255, 255, 255, 0.40)",
+          // background: "rgba(255, 255, 255, 0.40)",
           borderRadius: "10px",
           border: "1px solid rgba(0, 0, 0, 0.15)",
           padding: "30px",
@@ -314,7 +313,6 @@ const baseOptions = createTheme({
     },
     MuiButton: {
       root: {
-        background: "red",
         textTransform: "capitalize",
       },
       styleOverrides: {
@@ -324,45 +322,41 @@ const baseOptions = createTheme({
           lineHeight: "21px",
           fontWeight: "500",
         },
-        containedSecondary: {
-          backgroundColor: "rgba(255, 255, 255, 0.04)",
-          padding: "10px 30px",
-          filter: "drop-shadow(0px 13px 27px rgba(0, 0, 0, 0.25))",
-          fontSize: "14px",
-          fontWeight: "500",
-          lineHeight: "21px",
-          color: "#ffffff",
-          borderRadius: "50px",
-          color: "#fff",
-          border: "0.5px solid #F43755 !important",
-          boxShadow: "none",
-          background: "transparent",
-          textTransform: "capitalize",
-          "&:hover": {
-            color: "#ffffff",
-            background:
-              "linear-gradient(165deg, #FF9AAB -64.52%, #F53756 61.26%)",
-          },
-        },
+      
         containedPrimary: {
           color: "#fff",
-          filter: "drop-shadow(0px 13px 27px rgba(0, 0, 0, 0.25))",
           padding: "10px 30px",
           border: "0.5px solid transparent !important",
           fontSize: "14px",
           borderRadius: "10px",
-          background:
-            "linear-gradient(165deg, #FF9AAB -64.52%, #F53756 61.26%)",
+          background:"#6FCFB9",
           fontWeight: "500",
           lineHeight: "21px",
-          backgroundColor: "#898989",
+          backgroundColor: "#6FCFB9",
           textTransform: "capitalize",
           whiteSpace: "pre",
           "&:hover": {
-            color: "#fff",
-            border: "0.5px solid #F43755 !important",
+            color: "#535353",
+            border: "0.5px solid #6FCFB9 !important",
             boxShadow: "none",
             background: "transparent",
+          },
+        },
+          containedSecondary: {
+          backgroundColor: "#DEDEDE",
+          padding: "10px 30px",
+          fontSize: "14px",
+          fontWeight: "500",
+          lineHeight: "21px",
+          color: "#535353",
+          borderRadius: "10px",
+          border: "0.5px solid #DEDEDE !important",
+          boxShadow: "none",
+          background: "#DEDEDE",
+          textTransform: "capitalize",
+          "&:hover": {
+            color: "#535353",
+            background: "#FFF",
           },
         },
         outlinedPrimary: {
@@ -370,7 +364,7 @@ const baseOptions = createTheme({
           border: "0.5px solid #F43755 !important",
           padding: "7px 28px",
           fontSize: "14px",
-          background: "transparent",
+          background: "#F43755",
           borderRadius: "10px",
           fontWeight: "500",
           textTransform: "capitalize",

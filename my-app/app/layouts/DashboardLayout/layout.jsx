@@ -24,6 +24,7 @@ const RootContainer = styled(Box, {
     paddingTop: 70,
     minHeight: "100vh",
     position: "relative",
+    backgroundColor:"#F5F5F5",
 
     // Desktop Sidebar Space
     [theme.breakpoints.up("lg")]: {

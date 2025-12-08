@@ -8,41 +8,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 
-@font-face {
-  font-family: "Gilroy-SemiBold";
-  src: url("./font/Gilroy-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy-Bold";
-  src: url("./font/Gilroy-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy-Regular";
-  src: url("./font/Gilroy-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy-Light";
-  src: url("./font/Gilroy-Light.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Gilroy-Medium";
-  src: url("./font/Gilroy-Medium.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 .planBox {
   background: gold;
@@ -103,33 +68,20 @@
   align-items: center;
 }
 
-.logoImg {
-  width: 120px !important;
-}
-.dropZoneBox {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  border-radius: 10px;
-  padding: 40px;
-  border: 1px dashed rgba(0, 0, 0, 0.40);
-  
-}
+
+
 .slick-next:before,
 .slick-prev:before {
   font-size: 40px;
 
   opacity: 1 !important;
-  color: #fff;
   display: flex !important;
   align-items: center !important;
   justify-content: center;
   margin-top: -17px !important;
 }
 
-.mainFooterBox {
-  padding: 40px 65px;
-}
+
 .slickbottomslider {
   width: 100%;
   position: relative;
@@ -162,7 +114,6 @@
   left: auto !important;
   top: -22px !important;
   right: 150px !important;
-  color: #fff !important;
   z-index: 999 !important;
   border: 1px solid #333333 !important;
   background-color: rgba(16, 13, 75, 0.045) !important;
@@ -270,15 +221,6 @@
   }
 }
 
-.planslider {
-  width: calc(100% - 60px) !important;
-  margin: 0 auto;
-  // padding: 0 12px;
-  z-index: 99;
-  position: relative;
-  text-align: center;
-  // backgr-color: rgba(0, 0, 0,0);
-}
 .viewButton {
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   background: rgba(255, 255, 255, 0.03) !important;
@@ -299,23 +241,7 @@
 .mainContainerHomeLayout {
   margin: "120px 0px";
 }
-.css-128rwpq-MuiPaper-root-MuiDrawer-paper {
-  background-color: #101017 !important;
-  padding: 20px !important;
-  width: 240px !important;
-}
-.aspectborder {
-  position: absolute !important;
-  right: 39%;
-  width: auto;
-  max-width: 294px !important;
-  top: 12%;
-}
 
-.aspectbutton {
-  right: 26%;
-  top: 18%;
-}
 .bottomslickbottomslider .slick-next {
   right: 47% !important;
   top: 158% !important;
@@ -370,10 +296,6 @@
   border: none !important;
 }
 
-.talkimg {
-  width: auto;
-  max-width: 300px;
-}
 .socialButtonres {
   margin-right: 16px;
 }
@@ -458,10 +380,7 @@
   font-size: 32px !important;
   color: #161e2a !important;
 }
-.css-1x1qu2e-MuiAutocomplete-root .MuiInput-root .MuiInput-input {
-  padding: 4px 4px 4px 0px;
-  height: 40px;
-}
+
 
 .buttonChat {
   position: fixed;
@@ -503,79 +422,13 @@
   width: calc(100% - 78px);
 }
 
-.msg {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 10px;
-}
-
-.left-msg .msg-bubble {
-  border-bottom-left-radius: 0;
-}
-
-.right-msg {
-  flex-direction: row-reverse;
-}
-.right-msg .msg-bubble {
-  background: linear-gradient(90deg, #7a69fe 0%, #3d50ff 100%);
-  color: #fff;
-  border-bottom-right-radius: 0;
-}
-.msg-bubble {
-  /* max-width: 450px; */
-  padding: 15px;
-  border-radius: 15px;
-  background: #f4f3f4;
-}
-.profilechatImg {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
-  img {
-    width: auto;
-    max-width: 100%;
-    border-radius: 50%;
-  }
-}
-.chatButton {
-  text-transform: capitalize;
-  border: 1.248px solid #452dff !important;
-  /* color: #7a69fe; */
-  background: linear-gradient(159deg, #8c7dff 8.84%, #4027ff 87.99%) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  margin: 5px !important;
-}
 
 .chatborder {
   position: absolute;
   bottom: 21px;
   z-index: 9;
 }
-.bottomTextfeild {
-  position: relative;
-  width: calc(100% - 4px);
-  margin-left: 2px;
-  padding: 5px 10px;
-  background: #ffff;
-  border-top: 1px solid gray;
-  margin-top: -16px;
-  border-radius: 1px 0px 20px 20px;
-  .css-lo8n20-MuiInputBase-root-MuiInput-root:before {
-    border-bottom: none !important;
-    left: 0;
-    bottom: 0;
-    content: "\00a0";
-    position: absolute;
-    right: 0;
-    -webkit-transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1)
-      0ms;
-    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    pointer-events: none;
-  }
-}
+
 
 .chatIconBox {
   background-color: transparent !important;

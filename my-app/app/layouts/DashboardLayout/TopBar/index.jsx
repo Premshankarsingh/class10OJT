@@ -1,27 +1,39 @@
-"use client";
-
-import { Box, IconButton, Toolbar, AppBar, Grid, Avatar, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import { BiBell } from "react-icons/bi";
+import { styled } from "@mui/system";
+import {
+  IconButton,
+  Toolbar,
+  AppBar,
+  Grid,
+  Box,
+  Avatar,
+  Typography,
+} from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import Logo from "../../../../src/components/Logo";
-
-
-// ---------- STYLED COMPONENTS ------------ //
+import { HiOutlineDocumentArrowUp } from "react-icons/hi2";
+import Logo from "@/src/components/Logo";
 
 const AppBarContainer = styled(AppBar)(({ theme }) => ({
   backgroundColor: "rgba(255, 255, 255, 0.05)",
-  backdropFilter: "blur(10px)",
+ 
 }));
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  padding: "7px 30px",
+  padding: "7px 30px 7px 30px",
   [theme.breakpoints.down("sm")]: {
-    padding: "4px 16px",
+    padding: "0px 20px 0px 20px",
   },
 }));
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  padding: 0,
+  padding: "0px",
+}));
+
+const StyledAvatar = styled(Avatar)(({ theme }) => ({
+  cursor: "pointer",
 }));
 
 const MainHeader = styled(Box)(({ theme }) => ({
@@ -30,82 +42,114 @@ const MainHeader = styled(Box)(({ theme }) => ({
   alignItems: "center",
   flexWrap: "wrap",
 
-  "& .leftBox img": {
+  "& .leftBox": {
     width: "40px",
-    [theme.breakpoints.down("sm")]: {
-      width: "28px",
+    [theme.breakpoints.down("md")]: {
+      width: "20px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "10px",
+    },
+    "& img": {
+      width: "40px",
+      [theme.breakpoints.down("xs")]: {
+        width: "10px",
+        paddingLeft: "0 !important",
+      },
+    },
+    "& h4": {
+     
+      fontWeight: 400,
+    },
+  },
+  "& .filtersButton": {
+    marginLeft: "20px",
+    "& .filterIcon": {
+      "& button": {
+        background: "rgba(0, 0, 0, 0.08) !important",
+        width: "37px",
+        height: "37px",
+        borderRadius: "50%",
+
+        padding: "0px",
+        "& svg": {
+          position: "absolute",
+          color: "rgba(0, 0, 0, 0.40)",
+          zIndex: 3,
+        },
+      },
     },
   },
 }));
 
-// -------------------------------------------- //
-
-export default function TopBar({ onMobileNavOpen }) {
+const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
   return (
-    <AppBarContainer elevation={3} color="inherit" position="sticky">
+    
+      <AppBarContainer
+      elevation={3}
+      style={{ padding: "0px" }}
+      className={clsx(className)}
+      color="inherit"
+    >
       <StyledToolbar>
-
-        {/* Mobile Menu Button */}
-        <Box sx={{ display: { lg: "none", xs: "flex" } }}>
+        {/* <Hidden lgUp> */}
           <StyledIconButton onClick={onMobileNavOpen}>
-            <MenuIcon sx={{ fontSize: 30, color: "#f53756" }} />
+            <MenuIcon style={{ fontSize: "30px", color:"#f53756" }} />
           </StyledIconButton>
-        </Box>
-
-        {/* MAIN HEADER */}
+        {/* </Hidden> */}
         <MainHeader>
-          <Grid container alignItems="center">
-            
-            {/* LOGO - visible only on large screens */}
-            <Grid
-              item
-              lg={3}
-              md={3}
-              sm={4}
-              xs={4}
-              sx={{ display: { xs: "none", md: "block" } }}
-            >
-              <Logo width="150px" />
+          <Grid container>
+            {/* <Hidden mdDown> */}
+              <Grid item lg={3} md={3} sm={4} xs={3}>
+                <Logo width="150px" />
+              </Grid>
+            {/* </Hidden> */}
+            <Grid lg={9} md={9} sm={12} xs={12} style={{display:"flex", justifyContent:"end"}}>
+              <Box className="filtersButton displayEnd">
+                <Box className="filterIcon">
+                  <IconButton style={{ cursor: "pointer", marginRight: "8px" }}>
+                    <HiOutlineDocumentArrowUp />
+                  </IconButton>
+                </Box>
+                <Box className="filterIcon">
+                  <IconButton>
+                    <BiBell />
+                  </IconButton>
+                </Box>
+              </Box>
             </Grid>
-
-            {/* RIGHT SIDE */}
-            <Grid
-              item
-              lg={9}
-              md={9}
-              sm={8}
-              xs={8}
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "center",
-              }}
-            >
-              {/* Icons removed (commented previously) */}
-            </Grid>
-
           </Grid>
         </MainHeader>
       </StyledToolbar>
     </AppBarContainer>
+  
   );
-}
+};
 
-// ------------------------------------------------ //
-// Extra User Info Box (JSX version)
-// ------------------------------------------------ //
+TopBar.propTypes = {
+  className: PropTypes.string,
+};
+TopBar.defaultProps = {
+  onMobileNavOpen: () => {},
+};
+
+export default TopBar;
 
 export function TopBarData() {
   return (
-    <Box display="flex" alignItems="center" justifyContent="flex-end" gap={2}>
-      <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        <Typography variant="h6">NFT Marketplace</Typography>
-        <Typography variant="body2" sx={{ color: "#fff" }}>
-          example@gmail.com
-        </Typography>
+    <>
+      <Box display="flex" alignItems="center" justifyContent="flex-end">
+        <Hidden xsDown>
+          <Box>
+            <Typography variant="h5">NFT Marketplace</Typography>
+            <Typography variant="body1" style={{ color: "#fff" }}>
+              example@gmail.com
+            </Typography>
+          </Box>
+        </Hidden>
+        &nbsp; &nbsp;
+        <Avatar src="/images/vendorImg.png" alt="" />
       </Box>
-
-      <Avatar src="/images/vendorImg.png" alt="" />
-    </Box>
+    </>
   );
 }

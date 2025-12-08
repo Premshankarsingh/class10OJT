@@ -1,25 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { TbLogout } from "react-icons/tb";
 import PropTypes from "prop-types";
-
 import {
   Box,
   Drawer,
   List,
-  Button,
   ListSubheader,
-  Typography,
-  Divider,
 } from "@mui/material";
-
+// import {
+//   Hidden,
+// } from "@mui/material";
 import NavItem from "./NavItem";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
 import AppContext from "../../../../src/context/AppContext";
 // import LogoutModal from "@/components/LogoutModal";
-
 
 const MobileDrawer = styled(Drawer)(({ theme }) => ({
   "& .MuiPaper-root.MuiDrawer-paper": {
@@ -56,7 +52,6 @@ const SideMenuBox = styled(Box)({
     marginLeft: "45px",
   },
 });
-
 const LogoutButton = styled(Box)({
   display: "flex",
   justifyContent: "center",
@@ -64,7 +59,6 @@ const LogoutButton = styled(Box)({
   background: "transparent",
   fontWeight: "400",
   fontSize: "13px",
-  color: "#fff",
   marginTop: "20px",
   "& button": {
     borderRadius: "50px",
@@ -72,63 +66,90 @@ const LogoutButton = styled(Box)({
     bottom: "10px",
   },
 });
-
 const MainSiderBarBox = styled(Box)(({ theme }) => ({
   position: "relative",
   height: "calc(100% - 73px)",
   overflow: "auto",
-  "& .mainSiderBarBox": {
-    "& .profileBox": {
-      "& img": {
-        width: "100%",
-        height: "150px",
-        maxWidth: "150px",
-        objectFit: "cover",
-        borderRadius: "50%",
-      },
-      "& h6": {
-        color: "#fff",
-        fontWeight: "600",
-        margin: "10px 0px",
-      },
-      "& p": {
-        fontWeight: 400,
-        color: "#fff",
-        marginBottom: "24px",
-      },
-    },
+  [theme.breakpoints.down("xs")]: {
+    // height: "calc(100% - 470px)",
   },
+ 
 }));
 
-// -------------------------------------------------------------
-// Menu Items
-// -------------------------------------------------------------
 const sections = [
   {
     items: [
-      { title: "Dashboard", icon: "/images/dashboard/menu.png", href: "/admin/dashboard" },
-      { title: "User Management", icon: "/images/dashboard/management.png", href: "/admin/user-management" },
-      { title: "Vineyard Management", icon: "/images/dashboard/management.png", href: "/admin/vineyard-management" },
-      { title: "Brand Management", icon: "/images/dashboard/planning.png", href: "/admin/brand-management" },
-      { title: "Add NFT Management", icon: "/images/dashboard/kyc.png", href: "/admin/nft-management" },
-      { title: "Category Management", icon: "/images/dashboard/broadcast.png", href: "/admin/category-management" },
-      { title: "Commission Management", icon: "/images/dashboard/ip.png", href: "/admin/commission-management" },
-      { title: "Report Management", icon: "/images/dashboard/feedback.png", href: "/admin/report-management" },
-      { title: "Redeem management", icon: "/images/dashboard/static.png", href: "/admin/redeem-management" },
-      { title: "Static Content Management", icon: "/images/dashboard/link.png", href: "/admin/static-management" },
-      { title: "My Account", icon: "/images/dashboard/user.png", href: "/admin/my-account" },
+      {
+        title: "Home",
+        icon: "/images/next.svg",
+        href: "/admin/dashboard",
+      },
+      {
+        title: "Favourites",
+        icon: "/images/dashboard/FavoriteIcon.svg",
+        href: "/admin/user-management",
+      },
+      {
+        title: "Pets On List",
+        icon: "/images/dashboard/management.png",
+        href: "/admin/vineyard-management",
+      },
+      {
+        title: "Intrested",
+        icon: "/images/dashboard/planning.png",
+        href: "/admin/brand-management",
+      },
+      {
+        title: "Events",
+        icon: "/images/dashboard/kyc.png",
+        href: "/admin/nft-management",
+      },
+      {
+        title: "Missing Pets",
+        icon: "/images/dashboard/broadcast.png",
+        href: "/admin/category-management",
+      },
+
+      {
+        title: "Tracking",
+        icon: "/images/dashboard/ip.png",
+        href: "/admin/commission-management",
+      },
+      {
+        title: "Rewards",
+        icon: "/images/dashboard/feedback.png",
+        href: "/admin/report-management",
+      },
+      {
+        title: "Market",
+        icon: "/images/dashboard/static.png",
+        href: "/admin/redeem-management",
+      },
+      {
+        title: "Play Game",
+        icon: "/images/dashboard/link.png",
+        href: "/admin/static-management",
+      },
+      {
+        title: "About Us",
+        icon: "/images/dashboard/user.png",
+        href: "/admin/my-account",
+      },
+       {
+        title: "Contact Us",
+        icon: "/images/dashboard/user.png",
+        href: "/admin/my-account",
+      },
     ],
   },
 ];
 
-// -------------------------------------------------------------
-// Helpers
-// -------------------------------------------------------------
 function renderNavItems({ items, pathname, depth = 0 }) {
   return (
     <List disablePadding>
-      {items.map((item) =>
-        reduceChildRoutes({ item, pathname, depth, acc: [] })
+      {items.reduce(
+        (acc, item) => reduceChildRoutes({ acc, item, pathname, depth }),
+        []
       )}
     </List>
   );
@@ -140,7 +161,7 @@ function reduceChildRoutes({ acc, pathname, item, depth }) {
   if (item.items) {
     const open = pathname === item.href;
 
-    return (
+    acc.push(
       <NavItem
         depth={depth}
         icon={item.icon}
@@ -156,29 +177,27 @@ function reduceChildRoutes({ acc, pathname, item, depth }) {
         })}
       </NavItem>
     );
+  } else {
+    acc.push(
+      <NavItem
+        depth={depth}
+        href={item.href}
+        icon={item.icon}
+        info={item.info}
+        key={key}
+        title={item.title}
+      />
+    );
   }
-
-  return (
-    <NavItem
-      depth={depth}
-      href={item.href}
-      icon={item.icon}
-      info={item.info}
-      key={key}
-      title={item.title}
-    />
-  );
+  return acc;
 }
 
-// -------------------------------------------------------------
-// NavBar Component
-// -------------------------------------------------------------
 const NavBar = ({ onMobileClose, openMobile }) => {
   const router = useRouter();
   const auth = useContext(AppContext);
   const { profileData } = auth;
-
-  // const [isLogout, setIsLogout] = useState(false);
+  console.log("gshuehgu", profileData);
+  const [isLogout, setIsLogout] = useState(false);
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -186,30 +205,20 @@ const NavBar = ({ onMobileClose, openMobile }) => {
     }
   }, [router.pathname]);
 
+  const handleLogout = () => {
+    window.sessionStorage.removeItem("token");
+    router.push("/");
+  };
+
   const content = (
     <Box height="100%" display="flex" flexDirection="column">
       <MainSiderBarBox>
         <Box className="mainSiderBarBox">
-          <Box className="profileBox displayColumn">
-            <Box mt={3}>
-              <img src="/images/vendorImg.png" alt="profile" />
-            </Box>
-
-            <Typography variant="h6">Prem Singh</Typography>
-
-            <Divider
-              style={{
-                border: "0.5px solid rgba(255, 255, 255, 0.40)",
-                width: "90%",
-                marginTop: "8px",
-              }}
-            />
-          </Box>
-
+         
           <PerfectScrollbar options={{ suppressScrollX: true }}>
             <Box pt={2} pb={2} style={{ margin: "10px" }}>
               <SideMenuBox>
-                {sections.map((section, i) => (
+                {sections?.map((section, i) => (
                   <List
                     key={`menu${i}`}
                     subheader={
@@ -229,27 +238,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           </PerfectScrollbar>
         </Box>
       </MainSiderBarBox>
-
-      <Box>
-        <LogoutButton>
-          <Button
-            variant="contained"
-            color="primary"
-            // onClick={() => setIsLogout(true)}
-            startIcon={<TbLogout />}
-          >
-            Logout
-          </Button>
-        </LogoutButton>
-
-        {/* {isLogout && (
-          <LogoutModal
-            open={isLogout}
-            handleClose={() => setIsLogout(false)}
-            handleSubmit=""
-          />
-        )} */}
-      </Box>
     </Box>
   );
 
@@ -261,15 +249,18 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           onClose={onMobileClose}
           open={openMobile}
           variant="temporary"
+          // sx={{ display: { xs: 'none', sm: 'none', md: 'none' } }}
+          // sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg:"none" } }}
         >
           <Box p={2} style={{ position: "relative" }}>
             {content}
           </Box>
         </MobileDrawer>
       {/* </Hidden> */}
-
       {/* <Hidden lgDown> */}
-        <DesktopDrawer anchor="left" open variant="persistent">
+        <DesktopDrawer anchor="left" open variant="persistent" 
+        sx={{ display: { xs: 'none', sm: 'none', md: 'block',lg:"block" } }}
+        >
           {content}
         </DesktopDrawer>
       {/* </Hidden> */}

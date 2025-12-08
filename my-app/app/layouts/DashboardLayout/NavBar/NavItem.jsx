@@ -1,25 +1,21 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import {
-  Box,
-  Button,
-  Collapse,
-  ListItem,
-} from "@mui/material";
+import { Box, Button, Collapse, ListItem, ListSubheader } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles"; 
 import { useRouter } from "next/navigation";
-
-// ------------------ Styled Components ------------------ //
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   display: "block",
   paddingTop: 0,
   paddingBottom: 0,
+  [theme.breakpoints.up("md")]: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
   "& .MuiSvgIcon-root": {
     color: "#000",
     transition: "color 0.3s",
@@ -30,38 +26,61 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: "#000",
+  color: "#0D0D0D",
   justifyContent: "flex-start",
   textTransform: "none",
   marginBottom: "8px",
+  letterSpacing: 0,
   width: "100%",
   fontWeight: 400,
   "&:hover": {
     color: "#000",
     background: "rgba(255, 255, 255, 0.40)",
     border: "1px solid rgba(0, 0, 0, 0.25)",
+    "& $icon": {
+      color: "#000",
+    },
   },
 }));
 
 const StyledButtonLeaf = styled(Button)(({ theme }) => ({
-  color: "#fff",
+  color: "#404040 !important",
   justifyContent: "flex-start",
   textTransform: "none",
+  letterSpacing: 0,
   width: "100%",
   marginBottom: "5px",
+  opacity: 1,
+  border: "0.5px solid transparent !important",
   borderRadius: "10px",
-  fontWeight: 400,
+  fontWeight: 500,
   fontSize: "13px",
+
+  "& $icon": {
+    color: "#0D0D0D",
+  },
+  "& li": {
+    "& $title": {
+      marginLeft: "30px",
+    },
+  },
   "&:hover, &.active": {
-    borderRadius: "10px",
-    border: "0.5px solid #F43755 !important",
-    background: "linear-gradient(165deg, #FF9AAB -64.52%, #F53756 61.26%)",
-    color: "#fff !important",
+    "borderRadius": "10px",
+    "border": "0.5px solid #EEEDED !important",
+    "background": "#EEEDED",
+    color:"#404040",
+    "& $icon": {
+      color: "#404040 !important",
+    },
+    "& span": {
+      color: "#404040 !important",
+    },
   },
   "&.depth-0": {
-    "& span": {
+    "& $title": {
       fontWeight: 400,
       fontSize: "12px",
+      whiteSpace: "pre",
     },
   },
 }));
@@ -71,29 +90,33 @@ const StyledIcon = styled("span")(({ theme }) => ({
   alignItems: "center",
   marginRight: theme.spacing(2),
   marginLeft: theme.spacing(1),
+  color: "#000",
 }));
-
 const SideIconBox = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  // background: "transparent",
   width: "30px",
   height: "35px",
   borderRadius: "50%",
+  "& span": {
+    marginLeft: "16px",
+    color: "#404040",
+    fontWeight: 400,
+  },
 }));
-
 const StyledTitle = styled("span")({
   marginLeft: "5px",
-  color: "#fff",
-  fontWeight: 300,
+  color: "#404040",
+  fontWeight: 500,
   whiteSpace: "pre",
+  fontSize: "14px",
 });
 
 const StyledCollapse = styled(Collapse)({
   marginLeft: "0px",
 });
-
-// ------------------ Component Logic ------------------ //
 
 const NavItem = ({
   children,
@@ -110,7 +133,7 @@ const NavItem = ({
 }) => {
   const router = useRouter();
   const [open, setOpen] = useState(openProp);
-
+  console.log("acdwd", Icon);
   useEffect(() => {
     if (tabview === "Sniper") {
       setSelectedTab(tabview);
@@ -118,36 +141,46 @@ const NavItem = ({
   }, [tabview]);
 
   const handleToggle = () => {
-    setOpen(prev => !prev);
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const paddingLeft = depth > 0 ? 32 + 8 * depth : 8;
-  const isActive = typeof window !== "undefined" && window.location.pathname === href;
+  let paddingLeft = 8;
 
-  // ------------------ Parent Item (Has Children) ------------------ //
+  if (depth > 0) {
+    paddingLeft = 32 + 8 * depth;
+  }
+
+  const style = { paddingLeft };
+  const isActive = router.asPath === href;
+
   if (children) {
     return (
-      <StyledListItem className={clsx(className)} disableGutters {...rest}>
+      <StyledListItem
+        className={clsx(className)}
+        disableGutters
+        key={title}
+        {...rest}
+      >
         <StyledButton onClick={handleToggle}>
           {Icon && (
-            <StyledIcon>
-              <img src={Icon} alt={`${title}Icon`} />
-            </StyledIcon>
+            <StyledIcon>{<img src={Icon} alt={`${Icon}Img`} />}</StyledIcon>
           )}
 
           <StyledTitle>{title}</StyledTitle>
-
           {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </StyledButton>
-
         <StyledCollapse in={open}>{children}</StyledCollapse>
       </StyledListItem>
     );
   }
 
-  // ------------------ Leaf Item ------------------ //
   return (
-    <StyledListItem className={clsx(className)} disableGutters {...rest}>
+    <StyledListItem
+      className={clsx(className)}
+      disableGutters
+      key={title}
+      {...rest}
+    >
       <StyledButtonLeaf
         className={clsx(`depth-${depth}`, isActive && "active")}
         onClick={() => router.push(href)}
@@ -155,28 +188,24 @@ const NavItem = ({
         <SideIconBox>
           {Icon && (
             <StyledIcon>
-              <img src={Icon} alt={`${title}Icon`} width="19px" />
+              {<img src={Icon} alt={`${Icon}Img`} width={"19px"} />}
             </StyledIcon>
           )}
         </SideIconBox>
-
         <StyledTitle>{title}</StyledTitle>
-
         {Info && <Info />}
       </StyledButtonLeaf>
     </StyledListItem>
   );
 };
 
-// ------------------ PropTypes ------------------ //
-
 NavItem.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   depth: PropTypes.number.isRequired,
   href: PropTypes.string,
-  icon: PropTypes.any,
-  info: PropTypes.any,
+  icon: PropTypes.elementType,
+  info: PropTypes.elementType,
   open: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };

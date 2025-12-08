@@ -1,5 +1,5 @@
 "use client";
-import HomeLayout from "../../layouts/HomeLayout/layout";
+import DashboardLayout from "../../layouts/DashboardLayout/layout";
 import { Box, Typography, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Goback from "../../../src/components/Goback";
@@ -22,7 +22,7 @@ const MainDocumentBox = styled(Box, {
 }));
 export default function AboutUs() {
   return (
-    <HomeLayout>
+    <DashboardLayout>
       <MainDocumentBox>
         <Box className="aboutBox">
           <Container>
@@ -127,6 +127,6 @@ export default function AboutUs() {
           </Container>
         </Box>
       </MainDocumentBox>
-    </HomeLayout>
+    </DashboardLayout>
   );
 }

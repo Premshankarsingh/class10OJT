@@ -3,6 +3,7 @@ import { Box, Typography, Avatar, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import HomeLayout from "../../layouts/HomeLayout/layout";
 import Goback from "../../../src/components/Goback";
+import Marquee from "react-fast-marquee";
 
 const NotificationBox = styled(Box)(({ theme }) => ({
   "& .notificationBox": {
@@ -83,6 +84,9 @@ export default function Notifications() {
                 </Box>
               ))}
             </Box>
+            <Marquee>
+                  I can be a React component, multiple React components, or just some text.
+            </Marquee>
           </Container>
         </Box>
       </NotificationBox>
