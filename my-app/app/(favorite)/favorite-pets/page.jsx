@@ -62,12 +62,15 @@ const Marketplace = () => {
         <Paper>
           <Box className="marketplaceMainBox">
             <Container maxWidth="lg">
-              <Box>
-                <Typography variant="h6" align="center">
-                  Favourites
-                </Typography>
-              </Box>
-              <Box mb={3} className="displayCenter" my={2}>
+              <Typography
+                variant="h5"
+                align="center"
+                sx={{ color: "#535353", fontWeight: 700,marginTop:"8px" }}
+              >
+                Favourites
+              </Typography>
+
+              <Box mb={3} className="displayCenter" my={5}>
                 <Box>
                   <Button variant="contained" color="primary">
                     Pets
@@ -85,7 +88,11 @@ const Marketplace = () => {
                 </Box>
               </Box>
 
-              <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
                 {petDataList &&
                   petDataList?.map((petData, index) => (
                     <Grid item key={index} size={{ xs: 2, sm: 4, md: 4 }}>

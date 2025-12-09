@@ -9,7 +9,7 @@ import { styled } from "@mui/material/styles";
 import { useRouter } from "next/navigation";
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
-  display: "block",
+
   paddingTop: 0,
   paddingBottom: 0,
   [theme.breakpoints.up("md")]: {
@@ -17,16 +17,16 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
     paddingBottom: 0,
   },
   "& .MuiSvgIcon-root": {
-    color: "#000",
+    // color: "#000",
     transition: "color 0.3s",
   },
   "&:hover .MuiSvgIcon-root": {
-    color: "#000",
+    // color: "#000",
   },
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: "#0D0D0D",
+  // color: "#0D0D0D",
   justifyContent: "flex-start",
   textTransform: "none",
   marginBottom: "8px",
@@ -34,17 +34,17 @@ const StyledButton = styled(Button)(({ theme }) => ({
   width: "100%",
   fontWeight: 400,
   "&:hover": {
-    color: "#000",
-    background: "rgba(255, 255, 255, 0.40)",
+    // color: "#000",
+    // background: "rgba(255, 255, 255, 0.40)",
     border: "1px solid rgba(0, 0, 0, 0.25)",
     "& $icon": {
-      color: "#000",
+      // color: "#000",
     },
   },
 }));
 
 const StyledButtonLeaf = styled(Button)(({ theme }) => ({
-  color: "#404040 !important",
+
   justifyContent: "flex-start",
   textTransform: "none",
   letterSpacing: 0,
@@ -65,15 +65,15 @@ const StyledButtonLeaf = styled(Button)(({ theme }) => ({
     },
   },
   "&:hover, &.active": {
-    "borderRadius": "10px",
-    "border": "0.5px solid #EEEDED !important",
-    "background": "#EEEDED",
+    borderRadius: "10px",
+    border: "0.5px solid #EEEDED",
+    background: "#EEEDED",
     color:"#404040",
     "& $icon": {
-      color: "#404040 !important",
+      color: "#404040",
     },
     "& span": {
-      color: "#404040 !important",
+      color: "#404040",
     },
   },
   "&.depth-0": {
@@ -96,14 +96,12 @@ const SideIconBox = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  // background: "transparent",
   width: "30px",
   height: "35px",
   borderRadius: "50%",
   "& span": {
-    marginLeft: "16px",
-    color: "#404040",
-    fontWeight: 400,
+    marginLeft: "0px",
+    marginRight:"0px",
   },
 }));
 const StyledTitle = styled("span")({
@@ -133,7 +131,6 @@ const NavItem = ({
 }) => {
   const router = useRouter();
   const [open, setOpen] = useState(openProp);
-  console.log("acdwd", Icon);
   useEffect(() => {
     if (tabview === "Sniper") {
       setSelectedTab(tabview);
@@ -154,6 +151,7 @@ const NavItem = ({
   const isActive = router.asPath === href;
 
   if (children) {
+    
     return (
       <StyledListItem
         className={clsx(className)}

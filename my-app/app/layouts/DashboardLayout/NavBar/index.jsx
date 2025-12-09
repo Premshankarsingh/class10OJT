@@ -1,16 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { TbLogout } from "react-icons/tb";
 import PropTypes from "prop-types";
 import { Box, Drawer, List, ListSubheader } from "@mui/material";
-// import {
-//   Hidden,
-// } from "@mui/material";
 import NavItem from "./NavItem";
 import { styled } from "@mui/material/styles";
 import AppContext from "../../../../src/context/AppContext";
-// import LogoutModal from "@/components/LogoutModal";
 
 const MobileDrawer = styled(Drawer)(({ theme }) => ({
   "& .MuiPaper-root.MuiDrawer-paper": {
@@ -62,64 +57,64 @@ const sections = [
     items: [
       {
         title: "Home",
-        icon: "/images/next.svg",
-        href: "/admin/dashboard",
+        icon: "/images/dashboard/HomeIcon.svg",
+        href: "",
       },
       {
         title: "Favourites",
         icon: "/images/dashboard/FavoriteIcon.svg",
-        href: "/admin/user-management",
+        href: "",
       },
       {
         title: "Pets On List",
-        icon: "/images/dashboard/management.png",
-        href: "/admin/vineyard-management",
+        icon: "/images/dashboard/PetOnList.svg",
+        href: "",
       },
       {
         title: "Intrested",
-        icon: "/images/dashboard/planning.png",
-        href: "/admin/brand-management",
+        icon: "/images/dashboard/Intrested.svg",
+        href: "",
       },
       {
         title: "Events",
-        icon: "/images/dashboard/kyc.png",
-        href: "/admin/nft-management",
+        icon: "/images/dashboard/Events.svg",
+        href: "",
       },
       {
         title: "Missing Pets",
-        icon: "/images/dashboard/broadcast.png",
-        href: "/admin/category-management",
+        icon: "/images/dashboard/MissingPet.svg",
+        href: "",
       },
 
       {
         title: "Tracking",
-        icon: "/images/dashboard/ip.png",
-        href: "/admin/commission-management",
+        icon: "/images/dashboard/Tracking.svg",
+        href: "",
       },
       {
         title: "Rewards",
-        icon: "/images/dashboard/feedback.png",
-        href: "/admin/report-management",
+        icon: "/images/dashboard/Reward.svg",
+        href: "",
       },
       {
         title: "Market",
-        icon: "/images/dashboard/static.png",
-        href: "/admin/redeem-management",
+        icon: "/images/dashboard/Market.svg",
+        href: "",
       },
       {
         title: "Play Game",
-        icon: "/images/dashboard/link.png",
-        href: "/admin/static-management",
+        icon: "/images/dashboard/PlayGame.svg",
+        href: "",
       },
       {
         title: "About Us",
-        icon: "/images/dashboard/user.png",
-        href: "/admin/my-account",
+        icon: "/images/dashboard/AboutUs.svg",
+        href: "",
       },
       {
         title: "Contact Us",
-        icon: "/images/dashboard/user.png",
-        href: "/admin/my-account",
+        icon: "/images/dashboard/ContactUs.svg",
+        href: "",
       },
     ],
   },
