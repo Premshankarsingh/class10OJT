@@ -6,7 +6,7 @@ import PetCard from "./PetCard";
 
 const FavoritePetsBox = styled(Box)(({ theme }) => ({
   "& .favoritePetsMainBox": {
-    margin: "150px 0px 100px 0px",
+    margin: "200px 0px 100px 0px",
     position: "relative",
   },
 }));
@@ -55,7 +55,7 @@ const petDataList = [
   },
 ];
 
-const Marketplace = () => {
+const FavoritePets = () => {
   return (
     <DashboardLayout>
       <FavoritePetsBox>
@@ -65,7 +65,7 @@ const Marketplace = () => {
               <Typography
                 variant="h5"
                 align="center"
-                sx={{ color: "#535353", fontWeight: 700,marginTop:"8px" }}
+                sx={{ color: "#535353", fontWeight: 700 }}
               >
                 Favourites
               </Typography>
@@ -88,14 +88,14 @@ const Marketplace = () => {
                 </Box>
               </Box>
 
-              <Grid
-                container
-                spacing={{ xs: 2, md: 3 }}
-                columns={{ xs: 4, sm: 8, md: 12 }}
-              >
+              <Grid container spacing={{ xs: 2, md: 3 }}>
                 {petDataList &&
                   petDataList?.map((petData, index) => (
-                    <Grid item key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+                    <Grid
+                      item
+                      key={index}
+                      size={{ xs: 12, sm: 6, md: 4, lg: 4 }}
+                    >
                       <Box>
                         <PetCard petData={petData} />
                       </Box>
@@ -110,4 +110,4 @@ const Marketplace = () => {
   );
 };
 
-export default Marketplace;
+export default FavoritePets;

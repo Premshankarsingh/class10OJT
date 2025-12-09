@@ -9,4 +9,5 @@ export const withoutAuthRoutes = [
   "/about-us",
   "/faqs",
   "/favorite-pets",
+  "/login",
 ];

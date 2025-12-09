@@ -543,7 +543,17 @@
   display: block;
 }
 
-
+.favouriteBox {
+  position: absolute !important;
+  width: 45px;
+  height: 45px;
+  top: 35px !important;
+  right: 15px !important;
+  transform: translateY(-50%) !important;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+}
 
 
 

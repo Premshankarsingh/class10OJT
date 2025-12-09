@@ -4,31 +4,32 @@ import { TiHeartFullOutline } from "react-icons/ti";
 import { styled } from "@mui/system";
 import { CiLocationOn } from "react-icons/ci";
 import { useRouter } from "next/navigation";
-
 import { FaRegUser } from "react-icons/fa";
+
 const PetCardBox = styled(Box)(({ theme }) => ({
   "& .petCardMainBox": {
     border: "1px solid #DEDEDE",
     borderRadius: "10px",
-  },
 
-  "& .framecardBox": {
-    // position:"relative",
-    width: "100%",
-    height: "200px",
-    zIndex: "0",
-    overflow: "hidden",
-    borderRadius: "10px 10px 0px 0px",
-    backgroundSize: "cover !important",
-    backgroundRepeat: "no-repeat !important",
-    backgroundPosition: "center !important",
+    "& .backgroundImageBox": {
+      width: "100%",
+      height: "200px",
+      zIndex: "0",
+      overflow: "hidden",
+      position: "relative",
+      borderRadius: "10px 10px 0px 0px",
+      backgroundColor: "#FFFFFF",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+    },
   },
 }));
 
 const PetCard = ({ petData }) => {
   const router = useRouter();
   const [isFavorite, setIsFavorite] = useState(false);
-
+  console.log("isFavorite--->>>>", isFavorite);
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
   };
@@ -37,7 +38,7 @@ const PetCard = ({ petData }) => {
     <PetCardBox>
       <Box className="petCardMainBox">
         <Box
-          className="framecardBox"
+          className="backgroundImageBox"
           style={{ backgroundImage: `url(${petData.backgroundImage})` }}
         >
           <IconButton
@@ -47,10 +48,12 @@ const PetCard = ({ petData }) => {
             style={{
               color: isFavorite ? "#ed0000 !important" : "inherit",
               position: "absolute",
-             float:"right",
+              float: "right",
             }}
           >
-            <TiHeartFullOutline style={{ color: "#fff", fontSize: "50px" }} />
+            <TiHeartFullOutline
+              style={{ color: "#FFFFFF", fontSize: "50px" }}
+            />
           </IconButton>
         </Box>
         <Box p={1}>
