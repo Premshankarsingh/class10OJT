@@ -4,6 +4,7 @@ import { HiEye, HiEyeOff } from "react-icons/hi";
 import {
   Box,
   Button,
+  Checkbox,
   FormHelperText,
   IconButton,
   InputAdornment,
@@ -16,12 +17,13 @@ import { Form, Formik } from "formik";
 import LoginLayout from "../../layouts/LoginLayout/layout";
 import { useState } from "react";
 
-const MainComponent = styled("Box")(({ theme }) => ({
+const MainComponent = styled(Box)(({ theme }) => ({
   "& .loginmainBox": {
     height: "100%",
     position: "relative",
     zIndex: "999",
     overflowY: "auto",
+     marginTop:"100px",
     "& p": {
       fontWeight: "300",
     },
@@ -37,11 +39,14 @@ const MainComponent = styled("Box")(({ theme }) => ({
       width: "487px",
       maxHeight: "100%",
     },
-  
   },
 }));
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const handleCheckChange = (event) => {
+    setChecked(event.target.checked);
+  };
   const formInitialSchema = {
     email: "",
     password: "",
@@ -69,7 +74,7 @@ export default function Login() {
       <MainComponent>
         <Box className="loginmainBox displayCenter">
           <Box className="loginBox">
-            <Paper className="mainBox" elevation={2}>
+            <Paper className="mainBox" elevation={1}>
               <Formik
                 initialValues={formInitialSchema}
                 validationSchema={formValidationSchema}
@@ -140,18 +145,13 @@ export default function Login() {
                         {touched.password && errors.password}
                       </FormHelperText>
                     </Box>
-                    <Box className="displaySpaceBetween">
-                      <Typography
-                        variant="body2"
-                        style={{
-                          color: "#EC1F24",
-                          cursor: "pointer",
-                          fontWeight: "500",
-                        }}
-                        onClick={() => history.push("/forget-password")}
-                      >
-                        Forgot Password?
-                      </Typography>
+                    <Box className="displaySpacebetween">
+                      <Checkbox
+                        checked={checked}
+                        onChange={handleCheckChange}
+                        inputProps={{ "aria-label": "primary checkbox" }}
+                      />
+                      <Typography variant="body1">Forgot Password</Typography>
                     </Box>
                     <Box mt={2} mb={2}>
                       <Button
@@ -164,28 +164,37 @@ export default function Login() {
                       </Button>
                     </Box>
                     <Box className="displayCenter" mt={3} mb={3}>
-                      <Typography
-                        variant="body2"
-                        style={{ color: "rgba(0, 0, 0, 0.40)" }}
-                      >
-                        Don’t have an account?&nbsp;
-                        <span
-                          onClick={() => {
-                            // router.push("/auth/signup");
-                          }}
-                          style={{ cursor: "pointer" }}
-                        >
-                          Sign Up
-                        </span>
-                      </Typography>
+                      <Box>
+                        <Typography variant="body2" align="center">
+                          or
+                        </Typography>
+                        <Typography variant="h6" style={{ color: "#2DA8ED" }}>
+                          Create New Account
+                        </Typography>
+                      </Box>
                     </Box>
                     <Box className="displayCenter" mt={3} mb={3}>
-                      <Typography
-                        variant="body2"
-                        style={{ color: "rgba(0, 0, 0, 0.40)" }}
-                      >
-                        Need help with account?
-                      </Typography>
+                      <Box>
+                        <Typography variant="body2" align="center">
+                          Login With Social Accounts
+                        </Typography>
+                        <Box className="displayCenter">
+                          <IconButton>
+                            <img
+                              src="/images/login/googleIcons.svg"
+                              alt="search"
+                              width="350px"
+                            />
+                          </IconButton>
+                          <IconButton>
+                            <img
+                              src="/images/login/facebookIcon.svg"
+                              alt="search"
+                              width="350px"
+                            />
+                          </IconButton>
+                        </Box>
+                      </Box>
                     </Box>
                   </Form>
                 )}

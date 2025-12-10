@@ -13,9 +13,14 @@ const MainComponent = styled(Box)(({ theme }) => ({
     backgroundRepeat: "no-repeat !important",
     objectFit: "cover !important",
 
-    "& .MainLayout": {
-      height: "100vh",
+    "& .MainLayoutBox": {
+      height: "120vh",
       position: "relative",
+    },
+     "& .ChildLayoutBox": {
+      height: "120vh",
+      position: "relative",
+     
     },
     "& .careImageBox": {
       width: "100%",
@@ -35,7 +40,7 @@ export default function LoginLayout({ children }) {
       <LoginTopBar />
       <MainComponent>
         <Box className="loginLayoutBox">
-          <Box className="MainLayout">
+          <Box className="MainLayoutBox">
             <Grid container spacing={{ xs: 2, md: 3 }}>
               <Grid item size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
                 <Box className="displayCenter">
@@ -54,7 +59,7 @@ export default function LoginLayout({ children }) {
                 </Box>
               </Grid>
               <Grid item size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
-                <Box className="MainLayout">{children}</Box>
+                <Box className="ChildLayoutBox">{children}</Box>
               </Grid>
             </Grid>
           </Box>
