@@ -1,22 +1,22 @@
 export const themeOptions = {
   typography: {
     h1: {
+        color:"#404040",
+      lineHeight: "52px",
       fontFamily: "Inter",
       fontWeight: 500,
       fontSize: 50,
-      color:"#404040",
-      lineHeight: "52px",
       "@media(max-width:767px)": {
         fontSize: "30px !important",
         lineHeight: "40px",
       },
     },
     h2: {
-      fontFamily: "Inter",
-      fontWeight: 300,
-      fontSize: 30,
+       fontSize: 30,
       color:"#404040",
       lineHeight: "50px",
+      fontFamily: "Inter",
+      fontWeight: 300,
       wordBreak: "break-word",
       textTransform: "uppercase", 
       "@media(max-width:767px)": {
