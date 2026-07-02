@@ -1,0 +1,22 @@
+{
+  "title": "Our History",
+  "subtitle": "Legacy of Excellence Since 1952",
+  "journeyTitle": "The Journey",
+  "journeyText": "Shree Saraswati Secondary School began its journey in the Gurukul era of 1995, when education was imparted with only a few students and teachers, yet there was no compromise on learning, discipline, or values. This humble beginning laid a strong foundation for knowledge, character, and holistic development. Building on this tradition, the school was officially established in 2016, bringing together modern education and the time-tested Gurukul principles. From its early days to today, the school has remained committed to nurturing curiosity, excellence, and leadership in every student.",
+  "images": [
+    { "src": "/images/principal.png", "alt": "Past School" },
+    { "src": "/images/principal.png", "alt": "Modern School" }
+  ],
+  "gurukulPrincipals": [
+    { "id": 1, "name": "Acharya Vasudev", "years": "1952 - 1965", "address": "Gulmi, Nepal", "photo": "/images/principal.png" },
+    { "id": 2, "name": "Swami Atmananda", "years": "1965 - 1980", "address": "Tanahu, Nepal", "photo": "/images/principal.png" },
+    { "id": 3, "name": "Acharya Krishna", "years": "1980 - 1990", "address": "Kaski, Nepal", "photo": "/images/principal.png" },
+    { "id": 4, "name": "Pandit Gopal", "years": "1990 - 2000", "address": "Baglung, Nepal", "photo": "/images/principal.png" }
+  ],
+  "modernPrincipals": [
+    { "id": 5, "name": "Dr. Margaret Anderson", "years": "1985 - 2000", "address": "Pokhara, Nepal", "photo": "/images/principal.png" },
+    { "id": 6, "name": "Mr. Robert Thompson", "years": "2000 - 2015", "address": "Kathmandu, Nepal", "photo": "/images/principal.png" },
+    { "id": 7, "name": "Mr. Chhabilal Bhandari", "years": "2022 - Present", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/principal.png" },
+    { "id": 8, "name": "Dr. Sharmila Sharma", "years": "2015 - 2022", "address": "Butwal, Nepal", "photo": "/images/principal.png" }
+  ]
+}

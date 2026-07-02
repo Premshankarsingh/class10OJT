@@ -1,0 +1,14 @@
+{
+  "title": "Our Facilities",
+  "subtitle": "World-Class Infrastructure for Holistic Development",
+  "facilities": [
+    { "id": 1, "title": "Computer Lab", "description": "Modern computer lab with high-speed internet and latest software for digital literacy and technical education.", "image": "/images/lab.png" },
+    { "id": 2, "title": "Transportation", "description": "School buses covering various routes ensuring safe and convenient transportation for students.", "image": "/images/bus.png" },
+      { "id": 3, "title": "CCTV", "description":"Fully equipped physics, chemistry, and biology laboratories for hands-on practical learning and experiments.Closed-Circuit Television (CCTV) is used in our school to monitor activities and ensure a safe and secure environment for students and staff. ", "image": "/images/cctv.png" },
+    
+    { "id": 4, "title": "SmartBoard", "description": "Smartboards are installed in every classroom to make learning more interactive and engaging. They help teachers explain concepts clearly using digital content, improving students understanding and participation.",
+ "image": "/images/smartboard.png" }
+   
+    
+  ]
+}

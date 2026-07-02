@@ -1,0 +1,52 @@
+{
+  "title": "GALLERY",
+  "subtitle": "Creating Memories At Saraswati Secondary School",
+  "categories": [
+    {
+      "id": 1,
+      "title": "Science Exhibition",
+      "img": "/images/science.png",
+      "link": "/gallery/science",
+      "photos": [
+        { "src": "/images/principal.png", "alt": "Science Exhibition - Photo 1" },
+        { "src": "/images/physics.png", "alt": "Science Exhibition - Photo 2" },
+        { "src": "/images/chemistry.png", "alt": "Science Exhibition - Photo 3" },
+        { "src": "/images/Sciencee.png", "alt": "Science Exhibition - Photo 4" },
+        { "src": "/images/principal.png", "alt": "Science Exhibition - Photo 5" },
+        { "src": "/images/physics.png", "alt": "Science Exhibition - Photo 6" },
+        { "src": "/images/chemistry.png", "alt": "Science Exhibition - Photo 7" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tour & Picnic",
+      "img": "/images/tour.png",
+      "link": "/gallery/tour",
+      "photos": [
+        { "src": "/images/picnic.png", "alt": "Tour & Picnic - Photo 1" },
+        { "src": "/images/tour.png", "alt": "Tour & Picnic - Photo 2" },
+        { "src": "/images/principal.png", "alt": "Tour & Picnic - Photo 3" },
+        { "src": "/images/tech.png", "alt": "Tour & Picnic - Photo 4" },
+        { "src": "/images/Sciencee.png", "alt": "Tour & Picnic - Photo 5" },
+        { "src": "/images/picnic.png", "alt": "Tour & Picnic - Photo 6" },
+        { "src": "/images/tour.png", "alt": "Tour & Picnic - Photo 7" },
+        { "src": "/images/principal.png", "alt": "Tour & Picnic - Photo 8" },
+        { "src": "/images/tech.png", "alt": "Tour & Picnic - Photo 9" },
+        { "src": "/images/Sciencee.png", "alt": "Tour & Picnic - Photo 10" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Volleyball Competition",
+      "img": "/images/volleyball.png",
+      "link": "/gallery/volleyball",
+      "photos": [
+        { "src": "/images/volleyball.png", "alt": "Volleyball Competition - Photo 1" },
+        { "src": "/images/sports.png", "alt": "Volleyball Competition - Photo 2" },
+        { "src": "/images/principal.png", "alt": "Volleyball Competition - Photo 3" },
+        { "src": "/images/tech.png", "alt": "Volleyball Competition - Photo 4" },
+        { "src": "/images/Sciencee.png", "alt": "Volleyball Competition - Photo 5" }
+      ]
+    }
+  ]
+}

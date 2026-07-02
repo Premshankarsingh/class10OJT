@@ -3,10 +3,10 @@ const Logo = (props) => {
   return (
     <img
       className="logoimageBox"
-      src="/images/next.svg"
+      src="/images/logo.png"
       alt="Logo"
       {...props}
-      style={{ width: "auto", maxWidth: "190px" }}
+      style={{  height: "70px" , width: "auto", cursor: "pointer" }}
     />
   );
 };

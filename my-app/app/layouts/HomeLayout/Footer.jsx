@@ -1,265 +1,172 @@
+
+
+
+
+
+
+
+
 "use client";
+import { useState, useEffect } from "react";
 import { styled } from "@mui/system";
 import {
   Box,
   Container,
   Grid,
   IconButton,
-  List,
-  ListItem,
   Typography,
 } from "@mui/material";
-import Link from 'next/link'
-import { useRouter } from "next/navigation";
-import {
-  FaTwitter,
-  FaTelegramPlane,
-  FaWhatsapp,
-  FaInstagram,
-} from "react-icons/fa";
+import Link from "next/link";
+import { FaTwitter, FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
+
 const MainComponent = styled(Box)(({ theme }) => ({
   "& .footerSection": {
-    position: "relative",
-    padding: "50px 0px 0",
-    zIndex: "2",
-    overflow: " hidden",
-    background: "rgba(255, 255, 255, 0.02)",
-    background: "url(/images/footerBG.svg) no-repeat center/cover",
-    padding: "20px 0 0",
-    backgroundRepeat: "no-repeat",
-    "& .footerContentBox": {
-      maxWidth: "260px",
-      [theme.breakpoints.down("xs")]: {
-        maxWidth: "100%",
-      },
-    },
-    "& p": {
-      color: "rgba(255, 255, 255, 0.87)",
-    },
-    "& .copy": {
-      borderTop: "1px solid #d0d0d017",
-      padding: "10px 0",
-      textAlign: "center",
-      fontWeight: 300,
-      fontSize: "12px",
-      "& p": {
-        color: "rgba(255, 255, 255, 0.87)",
-        fontWeight: "300",
-        fontSize: "13px",
-      },
+    width: "100%",
+    backgroundColor: "#ffffff", // Matching the light theme of the second image
+    padding: "80px 10% 40px", // Adding side padding (10%) to push content in slightly from edges
+    color: "#333",
+    borderTop: "1px solid #eee",
+
+    "& .logoInfo": {
+      "& img": { width: "80px", marginBottom: "20px" },
+      "& p": { fontSize: "14px", color: "#666", lineHeight: "1.6" },
     },
 
-    "& svg": {
-      color: "#f53756 !important",
-      fontSize: "27px !important",
-      cursor: "pointer",
+    "& .footerHeading": {
+      fontWeight: "700",
+      fontSize: "18px",
+      marginBottom: "25px",
+      color: "#000",
     },
 
-    "& h6": {
-      [theme.breakpoints.down("sm")]: {
-        marginTop: "30px",
-      },
-      [theme.breakpoints.down("xs")]: {
-        marginTop: "10px",
-      },
-    },
-
-    "& a": {
-      color: "rgba(255, 255, 255, 0.87)",
-      display: "flex",
-      fontSize: "13px",
-      alignItems: "center",
-      fontWeight: "300",
-      paddingLeft: "0px",
-      paddingRight: "0px",
+    "& .footerLink": {
+      display: "block",
+      color: "#444",
       textDecoration: "none",
-      [theme.breakpoints.only("xs")]: {
-        fontSize: "11px",
-      },
-      "& :hover": {
-        color: "##fe2efe",
+      fontSize: "15px",
+      fontWeight: "500",
+      marginBottom: "15px",
+      transition: "0.3s",
+      "&:hover": { color: "#f53756" },
+    },
 
-        textDecoration: "none",
-        "& svg": {
-          color: "red",
-          fontSize: "15px",
-        },
-      },
-    },
-    "& .borderBox": {
-      position: "absolute",
-      left: "153px",
-      top: "12px",
-      [theme.breakpoints.down("sm")]: {
-        display: "none",
-      },
-    },
-    "& .iconbtn": {
+    "& .socialBox": {
       display: "flex",
-      alignItems: "center",
+      gap: "10px",
       "& .MuiIconButton-root": {
-        background: "transparent",
-        marginRight: "15px",
-        padding: "0px",
-        [theme.breakpoints.down("xs")]: {
-          marginBottom: "10px",
-        },
-      },
+        backgroundColor: "#f5f5f5",
+        borderRadius: "8px",
+        padding: "10px",
+        "& svg": { fontSize: "18px", color: "#333" },
+        "&:hover": { backgroundColor: "#eee" }
+      }
+    },
+
+    "& .copy": {
+      borderTop: "1px solid #eee",
+      paddingTop: "30px",
+      marginTop: "50px",
+      fontSize: "14px",
+      color: "#888",
     },
   },
 }));
 
 const Footer = () => {
-  const Router = useRouter();
+  const [footer, setFooter] = useState({
+    address: "Satyawati-6,Johang, Gulmi",
+    email: "saraswatischool@gmail.com",
+    copyright: "Copyright © Saraswati Secondary School. All rights Reserved.",
+  });
+
+  useEffect(() => {
+    fetch("/api/cms/footer")
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const ct = r.headers.get("content-type");
+        if (!ct || !ct.includes("application/json")) throw new Error("Not JSON");
+        return r.json();
+      })
+      .then((res) => {
+        if (res && res.success && res.data) setFooter(res.data);
+      })
+      .catch((err) => console.error("Footer fetch error:", err.message));
+  }, []);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        fetch("/api/cms/footer")
+          .then((r) => {
+            if (!r.ok) throw new Error(`HTTP ${r.status}`);
+            const ct = r.headers.get("content-type");
+            if (!ct || !ct.includes("application/json")) throw new Error("Not JSON");
+            return r.json();
+          })
+          .then((res) => {
+            if (res && res.success && res.data) setFooter(res.data);
+          })
+          .catch((err) => console.error("Footer refetch error:", err.message));
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, []);
+
   return (
     <MainComponent>
       <Box className="footerSection">
-        <Container maxWidth="lg">
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={12} md={4}>
-              <Box className="footerContentBox">
-                <Box mb={2}>
-                  {" "}
-                  <Link href="/">
-                    <img
-                      src="/images/logo.svg"
-                      alt=""
-                      style={{ width: "152px" }}
-                    />{" "}
-                    <br />
-                  </Link>
-                </Box>
-                <Typography
-                  variant="body2"
-                  style={{ color: "#F53756", maxWidth: "200px" }}
-                >
-                  The NFT Marketplace for Fine Wines
-                </Typography>
+       
+        <Container maxWidth={false}>
+          <Grid container spacing={4} justifyContent="space-between">
+            
+            
+            <Grid item xs={12} md={5} className="logoInfo">
+              <img src="/images/logo.png" alt="Logo" />
+              <Typography variant="body2" sx={{ mt: 2, fontWeight: "500", color: "#af59a4", whiteSpace: "pre-line" }}>
+                {footer.address}
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 2, fontWeight: "700" }}>
+                {footer.email}
+              </Typography>
+            </Grid>
+
+            
+            <Grid item xs={12} sm={4} md={2}>
+              <Typography className="footerHeading">Facilities</Typography>
+              <Link href="#" className="footerLink">Library</Link>
+              <Link href="#" className="footerLink">Science Lab</Link>
+              <Link href="#" className="footerLink">Computer Lab</Link>
+              <Link href="#" className="footerLink">Hostel</Link>
+            </Grid>
+
+           
+            <Grid item xs={12} sm={4} md={2}>
+              <Typography className="footerHeading">Contact Us</Typography>
+              <Link href="#" className="footerLink">Email Us</Link>
+              <Link href="#" className="footerLink">Call Us</Link>
+              <Link href="#" className="footerLink">Location</Link>
+              <Link href="#" className="footerLink">FAQ</Link>
+            </Grid>
+
+           
+            <Grid item xs={12} sm={4} md={2}>
+              <Typography className="footerHeading">Social Media</Typography>
+              <Box className="socialBox">
+                <IconButton><FaTwitter /></IconButton>
+                <IconButton><FaFacebookF /></IconButton>
+                <IconButton><FaInstagram /></IconButton>
               </Box>
             </Grid>
 
-            <Grid item xs={6} sm={3} md={3}>
-              <Typography
-                variant="body2"
-                style={{ color: "#F53756", fontWeight: "500" }}
-                color="primary"
-              >
-                Platform
-              </Typography>
-              <List>
-                <ListItem href="/brands" component={Link}>
-                  Brands
-                </ListItem>
-                <ListItem href="/product" component={Link}>
-                  Releases
-                </ListItem>
-                <ListItem href="/marketplace" component={Link}>
-                  Marketplace
-                </ListItem>
-                <ListItem href="/" component={Link}>
-                  Collabs
-                </ListItem>
-                <ListItem href="/static/faq" component={Link}>
-                  FAQ
-                </ListItem>
-              </List>
-            </Grid>
-
-            <Grid item xs={6} sm={3} md={3}>
-              <Typography
-                variant="body2"
-                style={{ color: "#F53756", fontWeight: "500" }}
-                color="primary"
-              >
-                Contact Us
-              </Typography>
-              <List>
-                <ListItem>
-                  <Link href="mailto:Vintage@mailinator.com">
-                    Vintage@mailinator.com
-                  </Link>
-                </ListItem>
-
-                <ListItem style={{ cursor: "pointer" }}>
-                  <Link href="">9109-9806432790</Link>
-                </ListItem>
-              </List>
-            </Grid>
-            <Grid item xs={6} sm={3} md={2}>
-              <Typography
-                variant="body2"
-                style={{ color: "#F53756", fontWeight: "500" }}
-                color="primary"
-              >
-                Contact Us
-              </Typography>
-
-              <Box className="iconbtn" mt={2}>
-                <IconButton target="_blank" href="https://www.whatsapp.com/">
-                  <Link target="_blank" href="https://web.whatsapp.com/">
-                    <FaWhatsapp />
-                  </Link>
-                </IconButton>
-                <IconButton>
-                  <Link target="_blank" href="https://twitter.com">
-                    <FaTwitter />
-                  </Link>
-                </IconButton>
-                <IconButton>
-                  <Link target="_blank" href="https://telegram.org/">
-                    <FaTelegramPlane />
-                  </Link>
-                </IconButton>
-                <IconButton>
-                  <Link target="_blank" href="https://intagram.com/">
-                    <FaInstagram />
-                  </Link>
-                </IconButton>
-              </Box>
-            </Grid>
           </Grid>
+
+          <Box className="copy">
+            <Typography>
+              {footer.copyright}
+            </Typography>
+          </Box>
         </Container>
-        <Box className="copy" mt={1}>
-          <Container>
-            <Box
-              alignItems="center"
-              position="relative"
-              flexWrap="wrap"
-              display="flex"
-              justifyContent="space-between"
-            >
-              <Typography variant="body2">© 2023 Vintage</Typography>
-
-              <Box className="displayStart">
-                <List className="displayStart">
-                  <ListItem
-                    href="/static/about"
-                    component={Link}
-                    style={{ whiteSpace: "pre" }}
-                  >
-                    About Us
-                  </ListItem>
-
-                  <ListItem
-                    href="/static/privacy-policy"
-                    component={Link}
-                    style={{ marginLeft: "28px", whiteSpace: "pre" }}
-                  >
-                    Privacy Policy
-                  </ListItem>
-
-                  <ListItem
-                    href="/static/terms-conditions"
-                    component={Link}
-                    style={{ marginLeft: "28px", whiteSpace: "pre" }}
-                  >
-                    Terms & Conditions
-                  </ListItem>
-                </List>
-              </Box>
-            </Box>
-          </Container>
-        </Box>
       </Box>
     </MainComponent>
   );

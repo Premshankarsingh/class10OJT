@@ -1,7 +1,6 @@
 "use client";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useRouter } from "next/navigation";
 import Footer from "./Footer";
 import TopBar from "./Topbar";
 
@@ -25,23 +24,13 @@ const RootComponent = styled(Box, {
 }));
 
 export default function HomeLayout({ children }) {
-  const router = useRouter();
-
   return (
-   
     <RootComponent>
       <div className="root">
         <TopBar />
-        <div
-          style={
-            router.pathname !== "/" ? { display: "block" } : { display: "none" }
-          }
-        ></div> 
         <div className="mainLayout">{children}</div>
         <Footer />
       </div>
     </RootComponent>
-  
-    
   );
 }

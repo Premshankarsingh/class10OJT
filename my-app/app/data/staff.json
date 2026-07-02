@@ -1,0 +1,29 @@
+{
+  "title": "Our Staff",
+  "subtitle": "Dedicated Teachers of Saraswati Secondary School",
+  "technicalBranch": {
+    "label": "Technical Branch",
+    "bgColor": "#2C235A",
+    "members": [
+      { "id": 1, "name": "Mrs. Sangita Rai", "subject": "Computer Science", "phone": "985-123-4567", "address": "Bidauri, Gulmi", "photo": "/images/computer.png" },
+      { "id": 2, "name": "Mr. Arun Kumar", "subject": "Chemistry", "phone": "985-234-5678", "address": "Bidauri, Gulmi", "photo": "/images/chemistry.png" },
+      { "id": 3, "name": "Mr. Shyam Sundar", "subject": "Physics", "phone": "985-345-6789", "address": "Bidauri, Gulmi", "photo": "/images/physics.png" },
+      { "id": 4, "name": "Mr. Maniram Gyawali", "subject": "Technical Math", "phone": "985-456-7890", "address": "Bidauri, Gulmi", "photo": "/images/Mathematics.png" },
+      { "id": 5, "name": "Mr. Arun Kumar", "subject": "Physics", "phone": "985-567-8901", "address": "Bidauri, Gulmi", "photo": "/images/physics.png" },
+      { "id": 6, "name": "Mrs. Binita Gurung", "subject": "Chemistry", "phone": "985-678-9012", "address": "Bidauri, Gulmi", "photo": "/images/chemistry.png" }
+    ]
+  },
+  "generalBranch": {
+    "label": "General Branch",
+    "bgColor": "#F43755",
+    "members": [
+      { "id": 1, "name": "Mr. Chhabilal Thapa", "subject": "Nepali", "phone": "985-111-2222", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/Nepali.png" },
+      { "id": 2, "name": "Mr.Hari Bhandari", "subject": "English", "phone": "985-222-3333", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/English.png" },
+      { "id": 3, "name": "Mr. Rajesh Gupta", "subject": "Economics", "phone": "985-333-4444", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/Economics.png" },
+      { "id": 4, "name": "Mrs. Uma Sharma", "subject": "Mathematics", "phone": "985-444-5555", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/Mathematics.png" },
+      { "id": 5, "name": "Mrs.Rajani Shahi", "subject": "Moral Science", "phone": "985-555-6666", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/Moral Sciencee.png" },
+      { "id": 6, "name": "Mr. Krishna Khanal", "subject": "Social Studies", "phone": "985-555-7777", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/Moral Social.png" }
+      
+    ]
+  }
+}

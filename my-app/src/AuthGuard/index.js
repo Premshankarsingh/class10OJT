@@ -4,10 +4,10 @@ export function isAuthenticated() {
 }
 
 export const withoutAuthRoutes = [
-  // USER PANEL...  
   "/",
-  "/about-us",
-  "/faqs",
-  "/favorite-pets",
-  "/login",
+  "/auth/login",
+  "/auth/signup",
+  "/auth/forgot-password",
+  "/auth/reset-password",
+  "/cms",
 ];

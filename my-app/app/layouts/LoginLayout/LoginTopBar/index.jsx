@@ -71,7 +71,7 @@ const LoginTopBar = () => {
                     variant="h3"
                     sx={{ color: "#6FCFB9", fontWeight: 700 }}
                   >
-                    Cali's Dairy
+                    Cali&apos;s Dairy
                   </Typography>
                 </Box>
               </Box>

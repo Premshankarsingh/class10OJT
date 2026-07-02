@@ -1,0 +1,66 @@
+{
+  "technical": [
+    {
+      "id": 1,
+      "slug": "science-exhibition-2026",
+      "subject": "Science Exhibition",
+      "date": "March 15, 2026",
+      "title": "Annual Science Exhibition Showcases Student Innovation",
+      "content": "Our annual science exhibition brought together over 50 projects from students across all grades. The event featured innovative displays in robotics, renewable energy solutions, and environmental conservation projects. Students demonstrated their creativity and scientific knowledge through hands-on demonstrations.",
+      "images": ["/images/science.png"],
+      "author": "School Administration"
+    },
+    {
+      "id": 2,
+      "slug": "computer-lab-upgrade",
+      "subject": "Technology Update",
+      "date": "February 28, 2026",
+      "title": "New Computer Lab inaugurated with Modern Facilities",
+      "content": "The school has inaugurated a state-of-the-art computer lab with 50 new machines equipped with the latest software. This facility will enhance digital literacy among students. The lab includes high-speed internet connectivity and specialized software.",
+      "images": ["/images/tech.png"],
+      "author": "IT Department"
+    },
+    {
+      "id": 3,
+      "slug": "math-olympiad-2026",
+      "subject": "Competition",
+      "date": "January 20, 2026",
+      "title": "Students Excel in National Math Olympiad",
+      "content": "Three of our students secured top positions in the national mathematics olympiad. The achievement reflects our commitment to excellence in STEM education. Students underwent rigorous training and preparation.",
+      "images": ["/images/volleyball.png"],
+      "author": "Mathematics Department"
+    }
+  ],
+  "general": [
+    {
+      "id": 1,
+      "slug": "annual-day-celebration",
+      "subject": "Cultural Event",
+      "date": "March 10, 2026",
+      "title": "Grand Celebration of Annual Day 2026",
+      "content": "The annual day celebration was a spectacular event featuring cultural performances, award ceremonies, and student achievements showcases. Parents and guardians filled the auditorium to witness their children's talents.",
+      "images": ["/images/ce.png"],
+      "author": "Cultural Committee"
+    },
+    {
+      "id": 2,
+      "slug": "sports-week-2026",
+      "subject": "Sports",
+      "date": "February 15, 2026",
+      "title": "Sports Week Concludes with Record Participation",
+      "content": "The week-long sports event saw record participation with students competing in cricket, basketball, volleyball, and athletics. The event promoted teamwork and sportsmanship among participants.",
+      "images": ["/images/sports.png"],
+      "author": "Sports Department"
+    },
+    {
+      "id": 3,
+      "slug": "environment-day",
+      "subject": "Awareness Program",
+      "date": "January 5, 2026",
+      "title": "Students Lead Environmental Awareness Campaign",
+      "content": "On Environment Day, our students organized a massive awareness campaign including tree plantation drives and cleanliness programs in the local community. The initiative was appreciated by local authorities.",
+      "images": ["/images/pa.png"],
+      "author": "Environmental Committee"
+    }
+  ]
+}

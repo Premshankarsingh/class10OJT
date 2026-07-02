@@ -1,0 +1,17 @@
+{
+  "schoolName": "Shree Saraswati Secondary School",
+  "schoolLocation": "Satyawati-6, Johang, Gulmi",
+  "navItems": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about", "subItems": [
+      { "label": "History", "href": "/about/history" },
+      { "label": "School Today", "href": "/about/schooltoday" },
+      { "label": "Committees", "href": "/about/committees" }
+    ]},
+    { "label": "Staff", "href": "/staff" },
+    { "label": "Facilities", "href": "/facilities" },
+    { "label": "Exam Portal", "href": "/exam-portal" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Gallery", "href": "/gallery" }
+  ]
+}

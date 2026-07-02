@@ -1,0 +1,82 @@
+{
+  "committees": {
+    "smc": {
+      "name": "School Management Committee",
+      "color": "#1a1a2e",
+      "icon": "Groups",
+      "showPhone": true,
+      "members": [
+        { "id": 1, "name": "Mr. Ram Bahadur", "position": "Chairman", "phone": "985-123-4567", "address": "Satyawati-6, Johang, Gulmi", "photo": "/images/principal.png" },
+        { "id": 2, "name": "Mrs. Gita Devi", "position": "Secretary", "phone": "985-234-5678", "address": "Satyawati-5, Johang, Gulmi", "photo": "/images/principal.png" },
+        { "id": 3, "name": "Mr. Shyam Kumar", "position": "Treasurer", "phone": "985-345-6789", "address": "Satyawati-7, Johang, Gulmi", "photo": "/images/principal.png" },
+        { "id": 4, "name": "Mrs. Kamala Rai", "position": "Executive Member", "phone": "985-456-7890", "address": "Bidauri, Gulmi", "photo": "/images/principal.png" },
+        { "id": 5, "name": "Mr. Hari Prasad", "position": "Executive Member", "phone": "985-567-8901", "address": "Satyawati-4, Johang, Gulmi", "photo": "/images/principal.png" },
+        { "id": 6, "name": "Mrs. Maya Gurung", "position": "Executive Member", "phone": "985-678-9012", "address": "Tanahu, Gulmi", "photo": "/images/principal.png" },
+       { "id": 7, "name": "Mrs. Kamala Rai", "position": "Executive Member", "phone": "985-456-7890", "address": "Bidauri, Gulmi", "photo": "/images/principal.png" },
+        { "id": 8, "name": "Mr. Hari Prasad", "position": "Executive Member", "phone": "985-567-8901", "address": "Satyawati-4, Johang, Gulmi", "photo": "/images/principal.png" },
+        { "id": 9, "name": "Mrs. Maya Gurung", "position": "Executive Member", "phone": "985-678-9012", "address": "Tanahu, Gulmi", "photo": "/images/principal.png" }
+      ]
+    },
+    "redCrossTechnical": {
+      "name": "Red Cross (Technical)",
+      "color": "#c0392b",
+      "icon": "HealthAndSafety",
+      "showPhone": false,
+      "members": [
+        { "id": 1, "name": "Student Representative 1", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 2, "name": "Student Representative 2", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 3, "name": "Student Representative 3", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 4, "name": "Student Representative 4", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 5, "name": "Student Representative 5", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" } ,
+         { "id": 6, "name": "Student Representative 6", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 7, "name": "Student Representative 7", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" }
+      ]
+    },
+    "ecoClubTechnical": {
+      "name": "Eco Club (Technical)",
+      "color": "#27ae60",
+      "icon": "Park",
+      "showPhone": false,
+      "members": [
+         { "id": 1, "name": "Student Representative 1", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 2, "name": "Student Representative 2", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 3, "name": "Student Representative 3", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 4, "name": "Student Representative 4", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 5, "name": "Student Representative 5", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" } ,
+         { "id": 6, "name": "Student Representative 6", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 7, "name": "Student Representative 7", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" }
+      ]
+    },
+    "redCrossGeneral": {
+      "name": "Red Cross (General)",
+      "color": "#2980b9",
+      "icon": "VolunteerActivism",
+      "showPhone": false,
+      "members": [
+        { "id": 1, "name": "Student Representative 1", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 2, "name": "Student Representative 2", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 3, "name": "Student Representative 3", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 4, "name": "Student Representative 4", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 5, "name": "Student Representative 5", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" } ,
+         { "id": 6, "name": "Student Representative 6", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 7, "name": "Student Representative 7", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" }
+      
+      ]
+    },
+    "ecoClubGeneral": {
+      "name": "Eco Club (General)",
+      "color": "#16a085",
+      "icon": "Park",
+      "showPhone": false,
+      "members": [
+         { "id": 1, "name": "Student Representative 1", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 2, "name": "Student Representative 2", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 3, "name": "Student Representative 3", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 4, "name": "Student Representative 4", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 5, "name": "Student Representative 5", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" } ,
+         { "id": 6, "name": "Student Representative 6", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" },
+        { "id": 7, "name": "Student Representative 7", "position": "Member", "address": "Technical Branch, Bidauri", "photo": "/images/principal.png" }
+      ]
+    }
+  }
+}

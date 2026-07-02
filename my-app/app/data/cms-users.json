@@ -1,0 +1,16 @@
+{
+  "admins": [
+    {
+      "id": 1,
+      "email": "admin@school.com",
+      "fullName": "Admin User"
+    }
+  ],
+  "editors": [
+    {
+      "id": 1777651485949,
+      "email": "Rajbanshi",
+      "fullName": "Amit"
+    }
+  ]
+}

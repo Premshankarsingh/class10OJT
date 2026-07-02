@@ -1,0 +1,25 @@
+{
+  "title": "School Today",
+  "subtitle": "Modern Education for Modern Minds",
+  "images": [
+    { "src": "/images/past_school.jpg", "alt": "Past School" },
+    { "src": "/images/modern_school.jpg", "alt": "Modern School" }
+  ],
+  "description": "Today, Shree Saraswati Secondary School is a vibrant and thriving educational community with two branches: the General Branch in Johang and the Technical Branch in Bidauri. With experienced teachers, modern classrooms, well-equipped labs, and a variety of co-curricular activities, the school provides an environment where students can learn, grow, and explore their full potential. We take pride in fostering academic excellence while encouraging creativity, critical thinking, and strong moral values. From its modest beginnings, the school has grown into a place where every student is supported, inspired, and prepared for the challenges of the future",
+  "principal": {
+    "photo": "/images/principal.png",
+    "name": "Mr. Chhabilal Bhandari",
+    "title": "Current Principal",
+    "description": "Under the leadership of the current principal, Shree Saraswati Secondary School has grown into a thriving institution with two branches: the General Branch in Johang and the Technical Branch in Bidauri. With experienced teachers, modern facilities, and diverse activities, the school provides a supportive environment for academic excellence, skill development, and personal growth. The Technical Branch highlights the school's commitment to innovative learning and preparing students for the future"
+  },
+  "stats": [
+    { "label": "Total Students", "value": "1200+" },
+    { "label": "Total Teachers", "value": "55+" },
+    { "label": "Current Coordinator", "value": "Mr. Rajesh Gupta" },
+    { "label": "School Incharge", "value": "Mrs. Sarita Rai" },
+    { "label": "Head Accountant", "value": "Mr. Binod Thapa" }
+  ],
+  "vision": "To be a leading educational institution that empowers students to be innovative thinkers and lifelong learners.To be a leading educational institution that empowers students to be innovative thinkers and lifelong learners.",
+  "mission": "Providing a safe, supportive, and challenging environment where every student can achieve their personal best.Providing a safe, supportive, and challenging environment where every student can achieve their personal best.",
+  "achievements": "• Best School Award 2024 <br/>\n• National Sports Championship Winners <br/>\n• Excellence in Digital Learning Certification\n• Best School Award 2024 <br/>\n• National Sports Championship Winners <br/>\n\n• National Sports Championship Winners <br/>"
+}

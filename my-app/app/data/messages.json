@@ -1,0 +1,34 @@
+{
+  "principal": {
+    "title": "Message from Principal",
+    "name": "Mr. Chhabilal Bhandari",
+    "photo": "/images/principal.png",
+    "message": "Welcome to Shree Saraswati Secondary School! It is my privilege to lead this esteemed institution that has been a beacon of educational excellence since its inception. Our school is committed to providing quality education that combines academic rigor with character development.\n\nWe believe in nurturing young minds to become responsible citizens who can contribute meaningfully to society. Our dedicated faculty works tirelessly to ensure every student receives personalized attention and guidance.\n\nTogether, let us continue this journey of learning and growth.",
+    "address": "Satyawati-6, Johang, Gulmi",
+    "borderColor": "#F43755"
+  },
+  "chairman": {
+    "title": "Message from Chairman",
+    "name": "Mr. Chairman Name",
+    "photo": "/images/principal.png",
+    "message": "Education is the passport to the future, for tomorrow belongs to those who prepare for it today. At Shree Saraswati Secondary School, we are committed to providing an environment where every student can flourish and reach their full potential.\n\nOur vision is to create leaders of tomorrow who are not only academically brilliant but also morally upright. We strive to instill values of integrity, compassion, and excellence in every student who walks through our doors.\n\nI invite you to join us in this noble mission of shaping young minds and building a better future for our community.",
+    "address": "Satyawati-6, Johang, Gulmi",
+    "borderColor": "#2C235A"
+  },
+  "coordinator": {
+    "title": "Message from Coordinator",
+    "name": "Mr. Rajesh Gupta",
+    "photo": "/images/principal.png",
+    "message": "We believe in nurturing young minds to become future leaders through innovative learning. At Shree Saraswati Secondary School, we focus on holistic development that combines academic excellence with practical skills.\n\nOur coordinated efforts ensure that every student receives the guidance and support they need to succeed. We encourage curiosity, creativity, and critical thinking in all our students.\n\nJoin us in creating a learning environment where every student can thrive and achieve their dreams.",
+    "address": "Satyawati-6, Johang, Gulmi",
+    "borderColor": "#27ae60"
+  },
+  "vicePrincipal": {
+    "title": "Message from Vice Principal",
+    "name": "Mrs. Sarita Rai",
+    "photo": "/images/principal.png",
+    "message": "Our community thrives on collaboration, ensuring every student reaches their potential. At Shree Saraswati Secondary School, we work together to create a supportive and nurturing environment for all our students.\n\nAs Vice Principal, I am committed to maintaining the highest standards of education while fostering a culture of respect, teamwork, and continuous improvement.\n\nWe believe that every student has unique talents and abilities, and our goal is to help them discover and develop these strengths.",
+    "address": "Satyawati-6, Johang, Gulmi",
+    "borderColor": "#0984e3"
+  }
+}

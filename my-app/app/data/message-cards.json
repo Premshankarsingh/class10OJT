@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Message from Principal",
+    "img": "/images/principal.png",
+    "text": "Welcome to Saraswati Secondary School. Our institution is dedicated to academic excellence.",
+    "link": "/message/principal"
+  },
+  {
+    "id": 2,
+    "title": "Message from Chairman",
+    "img": "/images/principal.png",
+    "text": "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+    "link": "/message/chairman"
+  },
+  {
+    "id": 3,
+    "title": "Message from Coordinator",
+    "img": "/images/principal.png",
+    "text": "We believe in nurturing young minds to become future leaders through innovative learning.",
+    "link": "/message/coordinator"
+  },
+  {
+    "id": 4,
+    "title": "Message from Vice Principal",
+    "img": "/images/principal.png",
+    "text": "Our community thrives on collaboration, ensuring every student reaches their potential.",
+    "link": "/message/vice-principal"
+  }
+]

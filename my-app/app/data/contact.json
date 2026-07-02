@@ -1,0 +1,23 @@
+{
+  "title": "Contact Us",
+  "subtitle": "Reach out to our dedicated team members for any assistance",
+  "staffMembers": [
+    { "name": "Dr. Sarah Johnson", "role": "Principal", "email": "principal@school.edu", "phone": "+1 (555) 123-4567" },
+    { "name": "Mr. Michael Chen", "role": "Academic Coordinator", "email": "m.chen@school.edu", "phone": "+1 (555) 234-5678" },
+    { "name": "Ms. Emily Rodriguez", "role": "Activities Incharge", "email": "e.rodriguez@school.edu", "phone": "+1 (555) 345-6789" },
+    { "name": "Dr. James Williams", "role": "Vice Principal", "email": "vp@school.edu", "phone": "+1 (555) 456-7890" },
+    { "name": "Mrs. Patricia Davis", "role": "Admissions Coordinator", "email": "admissions@school.edu", "phone": "+1 (555) 567-8901" },
+    { "name": "Mr. Robert Brown", "role": "Sports Incharge", "email": "sports@school.edu", "phone": "+1 (555) 678-9012" }
+  ],
+  "contactInfo": {
+    "header": "GET IN TOUCH",
+    "subtitle": "Wed love to hear from you. Send us a message and well respond as soon as possible.",
+    "address": "Damak-9, Itabhatta, Jhapa, Nepal",
+    "phone": "023-570620\n985-267-5320",
+    "email": "info@school.edu.np"
+  },
+  "locations": [
+    { "title": "Main Campus - Downtown Branch", "mapUrl": "about:blank" },
+    { "title": "Secondary Campus - Riverside Branch", "mapUrl": "about:blank" }
+  ]
+}

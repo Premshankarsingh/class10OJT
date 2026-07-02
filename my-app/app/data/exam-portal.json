@@ -1,0 +1,14 @@
+{
+  "title": "EXAM PORTAL",
+  "subtitle": "Access Examination Resources At Saraswati Secondary School",
+  "exams": [
+    { "id": 1, "title": "Class 10 2081", "img": "/images/principal.png", "link": "/exam-portal/class-10-2081" },
+    { "id": 2, "title": "Class 10 2082", "img": "/images/principal.png", "link": "/exam-portal/class-10-2082" },
+    { "id": 3, "title": "Class 12 2082", "img": "/images/principal.png", "link": "/exam-portal/class-12-2082" },
+    { "id": 4, "title": "Class 10 2083", "img": "/images/principal.png", "link": "/exam-portal/class-10-2083" },
+    { "id": 5, "title": "Class 10 2080", "img": "/images/principal.png", "link": "/exam-portal/class-10-2080" },
+    { "id": 6, "title": "Class 12 2080", "img": "/images/principal.png", "link": "/exam-portal/class-12-2080" },
+    { "id": 7, "title": "Class 10 2079", "img": "/images/principal.png", "link": "/exam-portal/class-10-2079" },
+    { "id": 8, "title": "Class 10 2078", "img": "/images/principal.png", "link": "/exam-portal/class-10-2078" }
+  ]
+}

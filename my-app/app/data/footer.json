@@ -1,0 +1,23 @@
+{
+  "logo": "/images/principal.png",
+  "address": "Satyawati-6,Johang, Gulmi",
+  "email": "saraswatischool@gmail.com",
+  "facilitiesLinks": [
+    { "label": "Library", "href": "/facilities" },
+    { "label": "Science Lab", "href": "/facilities" },
+    { "label": "Computer Lab", "href": "/facilities" },
+    { "label": "Hostel", "href": "/facilities" }
+  ],
+  "contactLinks": [
+    { "label": "Email Us", "href": "/contact" },
+    { "label": "Call Us", "href": "/contact" },
+    { "label": "Location", "href": "/contact" },
+    { "label": "FAQ", "href": "/contact" }
+  ],
+  "socialMedia": [
+    { "platform": "twitter", "href": "#" },
+    { "platform": "facebook", "href": "#" },
+    { "platform": "instagram", "href": "#" }
+  ],
+  "copyright": "Saraswati Secondary School. All rights Reserved."
+}

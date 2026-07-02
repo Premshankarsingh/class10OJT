@@ -102,7 +102,7 @@ const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
                 </IconButton>
                 <Box>
                   <Typography variant="h3" sx={{ color: "#6FCFB9",fontWeight:700 }}>
-                    Cali's Dairy
+                    Cali&apos;s Dairy
                   </Typography>
                 </Box>
               </Box>
@@ -179,14 +179,12 @@ export function TopBarData() {
   return (
     <>
       <Box display="flex" alignItems="center" justifyContent="flex-end">
-        <Hidden xsDown>
-          <Box>
-            <Typography variant="h5">NFT Marketplace</Typography>
-            <Typography variant="body1" style={{ color: "#fff" }}>
-              example@gmail.com
-            </Typography>
-          </Box>
-        </Hidden>
+        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Typography variant="h5">NFT Marketplace</Typography>
+          <Typography variant="body1" style={{ color: "#fff" }}>
+            example@gmail.com
+          </Typography>
+        </Box>
         &nbsp; &nbsp;
         <Avatar src="/images/vendorImg.png" alt="" />
       </Box>
